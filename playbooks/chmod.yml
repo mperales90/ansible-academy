@@ -1,0 +1,12 @@
+---
+- name: Change the permissions and ownership to a file/s and an entire directory
+  hosts: all
+
+  tasks:
+
+  - name: Change owner and permissions for test file
+    file:
+      path: /home/ec2-user/<file_name>
+      owner: <user>
+      group: <group>
+      mode: 0644

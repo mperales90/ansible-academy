@@ -1,0 +1,16 @@
+---
+- name: Install software
+  hosts: all
+  become: true
+  vars:
+    packages:
+      - nmap
+      - httpd
+      - php
+
+  tasks:
+
+  - name: Install Software
+    yum:
+      name: "{{ packages }}"
+      state: present

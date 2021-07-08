@@ -1,0 +1,11 @@
+---
+- name: Copy files or a directory into the hosts specified directory
+  hosts: all
+  become: true
+
+  tasks:
+
+  - name: Copy files
+    copy:
+      src: /home/ec2-user/index.html  # from master
+      dest: /var/www/html/            # to host

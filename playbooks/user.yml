@@ -1,0 +1,11 @@
+---
+- name: Create a User
+  hosts: all
+  become: true
+
+  tasks:
+
+  - name: Create a user
+    user:
+      name: <user>
+      state: present   # absent for deleting

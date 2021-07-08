@@ -1,0 +1,35 @@
+---
+- name: Create a running webserver
+  hosts: all
+  become: true
+
+  tasks:
+
+  - name: Create a user
+    user:
+      name: webmaster
+      state: present
+
+  - name: Install Apache
+    yum:
+      name: httpd
+      state: present
+
+  - name: Start Apache
+    service:
+      name: httpd
+      state: started
+
+  - name: Copy files
+    copy:
+      src: /home/ec2-user/index.html  # from master
+      dest: /var/www/html/            # to host
+
+
+  - name: Change owner and permissions for index file
+    file:
+      path: /var/www/html/index.html
+      owner: <user>
+      group: <group>
+      mode: 0644
+

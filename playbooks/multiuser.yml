@@ -1,0 +1,16 @@
+---
+- name: create users
+  hosts: all
+  become: true
+  vars:
+    user:
+      - user1
+      - user2
+      - user3
+
+  tasks:
+  - name: create users
+    user:
+      name: "{{ item }}"
+      state: present
+    loop: "{{ user }}"

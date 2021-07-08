@@ -1,5 +1,8 @@
 # Let's install Ansible
 
+There are many ways you can install Ansible, for this demo we will install it with pip. You can check other ways to install it in: 
+https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+
 Make sure you have python installed:
 
     python --version 
